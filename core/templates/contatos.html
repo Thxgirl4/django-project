@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+		<title>Contato</title>
+	</head>
+	<body>
+		<header>
+			<div class="container header-content">
+				<div class="brand">Fruteira</div>
+				<nav>
+					<ul>
+						<li><a href="{% url 'index' %}">Inicio</a></li>
+						<li><a href="">Contato</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="page">
+			<div class="container grid grid-2">
+				<section class="card">
+					<h1>Contato</h1>
+					<p class="muted">Entre em contato conosco atraves deste formulario.</p>
+					<form method="post">
+						{% csrf_token %}
+						<div>
+							<label for="nome">Nome</label>
+							<input id="nome" name="nome" type="text" placeholder="Seu nome">
+						</div>
+						<div>
+							<label for="email">Email</label>
+							<input id="email" name="email" type="email" placeholder="voce@exemplo.com">
+						</div>
+						<div>
+							<label for="mensagem">Mensagem</label>
+							<textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?"></textarea>
+						</div>
+						<button type="submit">Enviar</button>
+					</form>
+				</section>
+				<section class="card">
+					<h2>Sobre</h2>
+					<p>Edite este conteudo para a sua pagina.</p>
+					<p class="muted">Atendimento de segunda a sexta, 9h as 18h.</p>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+			<div class="container">
+				<small>&copy; 2026</small>
+			</div>
+		</footer>
+	</body>
+</html>

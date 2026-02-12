@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+		<title>Pagina inicial</title>
+	</head>
+	<body>
+		<header>
+			<div class="container header-content">
+				<div class="brand">Fruteira</div>
+				<nav>
+					<ul>
+						<li><a href="{% url 'index' %}">Inicio</a></li>
+						<li><a href="">Contato</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="page">
+			<div class="container grid grid-2">
+				<section class="card">
+					<h1>Bem-vindo</h1>
+					<p class="muted">Este e um corpo HTML basico.</p>
+					<h2>Curso</h2>
+					<p>{{curso}}</p>
+				</section>
+				<section class="card">
+					<h2>Produtos</h2>
+					<ul>
+						{% for produto in produtos %}
+							<li><a href="{% url 'produto' produto.id %}">{{produto.nome}}</a></li>
+						{% endfor %}
+					</ul>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+			<div class="container">
+				<small>&copy; 2026</small>
+			</div>
+		</footer>
+	</body>
+</html>

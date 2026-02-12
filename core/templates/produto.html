@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+		<title>Produto</title>
+	</head>
+	<body>
+		<header>
+			<div class="container header-content">
+				<div class="brand">Fruteira</div>
+				<nav>
+					<ul>
+						<li><a href="{% url 'index' %}">Inicio</a></li>
+						<li><a href="">Contato</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="page">
+			<div class="container">
+				<section class="card">
+					<h1>Detalhes do produto</h1>
+					<table>
+						<tr>
+							<th>Nome</th>
+							<td>{{produto.nome}}</td>
+						</tr>
+						<tr>
+							<th>Preco</th>
+							<td>{{produto.preco}}</td>
+						</tr>
+						<tr>
+							<th>Descricao</th>
+							<td>{{produto.descricao}}</td>
+						</tr>
+					</table>
+					<div class="grid">
+						<form method="post">
+							{% csrf_token %}
+							<button onclick="teste();">Deletar</button>
+						</form>
+						<a class="btn btn-outline" href="{% url 'index' %}">Voltar</a>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+			<div class="container">
+				<small>&copy; 2026</small>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+	</body>
+
+</html>
