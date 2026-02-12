@@ -7,3 +7,11 @@ __pycache__/
 .idea/
 *.sqlite3
 *.log
+
+.venv/
+venv/
+env/
+ENV/
+venv/
+env.bak/
+venv.bak/
